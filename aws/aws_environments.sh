@@ -82,7 +82,9 @@ printf "  Commands:\n"
 printf "  ────────\n\n"
 printf "  ■ envs (show this info)\n"
 printf "  ■ activate <envinonmet_name>\n"
-printf "  ■ deactivate\n"
+printf "  ■ deactivate\n\n"
+printf "  ■ jupyter\n"
+printf "  ■ aws_s3_ls\n"
 printf "\n"
 EOF
 

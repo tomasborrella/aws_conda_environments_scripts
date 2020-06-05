@@ -13,7 +13,7 @@ print_usage() {
   printf -- "-p -- proxy parameters (comma separated)\n"
   printf -- "-l -- flag for local instalation\n\n"
   printf "example:\n"
-  printf "gen_env.sh -p USER,HOST,POST -l\n"
+  printf "gen_env.sh -p USER,HOST,PORT -l\n"
 }
 
 # Check for needed files

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to default configuration file
-default_configuration=default.cfg
+default_configuration=~/aws_conda_environments_scripts/aws/default.cfg
 
 print_usage() {
   printf "ssh_aws.sh - send a preparation script to aws and open a ssh connection with a tunnel\n\n"

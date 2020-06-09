@@ -1,12 +1,23 @@
 # Proxy Scripts
 
-Bash scripts to configure Internet access through a proxy in a Linux system.
+Bash scripts to configure Internet access through a proxy in a Linux system (Debian-based Linux distros: Ubuntu, Mint ,...).
+
+## Prerequisites
+
+Script to enable proxy tries to configure several applications:
+  - apt
+  - conda
+  - docker (for systems with *systemctl*)
+  - git
+  - resolvconf 
+ 
+If you do not use any of these applications in your system you can comment out this lines.
 
 ## Installation
 
 No installation required, just place both files in a folder (I've used *~/scripts/proxy/* in the examples but you can choose the folder you want).
 
-For your convenience you can include the folder to the system path and/or you can add a function to your *~/.bashrc* file (or *~/.zshrc*):
+For your convenience you can add a function to your *~/.bashrc* file (or *~/.zshrc*) like the following:
 
 ```code
 proxy() {
@@ -40,25 +51,15 @@ And, at last, you can edit *dns* settings if you want to add custom nameserves o
 
 ## Usage instructions
 
-Depending of the options choosen during "installation" you can execute it in various ways:
-
-1. Direct way (from the folder of the scripts): 
+You can execute the scripts using *source* (with apropiate path):
 ```code
-./enable_proxy.sh
+source enable_proxy.sh
 ```
 ```code
-./disable_proxy.sh
+source disable_proxy.sh
 ```
 
-2. If proxy scripts folder have been added to the path:
-```code
-enable_proxy.sh
-```
-```code
-disable_proxy.sh
-```
-
-3. If proxy function has been added to *.bashrc* (or *.zshrc*):
+Or if proxy function has been added to *.bashrc* (or *.zshrc*) you can execute:
 ```code
 proxy on
 ```

@@ -48,7 +48,7 @@ user=<proxy_user>
 
 You can also edit *no_proxy* variable to add the address you don't want to use proxy for.
 
-And, at last, you can edit *dns* settings if you want to add custom nameserves once you connect to the proxy.
+And, at last, you can edit *nameservers* array if you want to add custom nameserves once you connect to the proxy.
 
 **IMPORTANT NOTE**: If your scripts path is not *~/aws_conda_environments_scripts/proxy* you should modify
 *enable_proxy.sh* to set the path of the configuration file (absolute).

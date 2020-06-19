@@ -59,8 +59,8 @@ sudo systemctl restart docker
 git config --global http.proxy http://$user:$pass@$host:$port
 
 # dns
-echo -e "nameserver 8.8.8.8
-nameserver 8.8.8.4
-" | sudo tee /etc/resolvconf/resolv.conf.d/head > /dev/null
+for nameserver in ${nameservers[@]}; do
+  echo -e "nameserver $nameserver" | sudo tee -a /etc/resolvconf/resolv.conf.d/head > /dev/null
+done
 
 sudo resolvconf -u

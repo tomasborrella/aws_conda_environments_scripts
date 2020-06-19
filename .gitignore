@@ -3,5 +3,5 @@
 !/**/
 !*.*
 
-# ignore files that start with work_
-work_*
+# idea IDE
+.idea

@@ -1,21 +1,22 @@
 #!/bin/bash
 
-# proxy variables
-host=0.0.0.0
-port=8080
-no_proxy="127.0.0.1,localhost"
+# Path to configuration file
+configuration=~/aws_conda_environments_scripts/proxy/default.cfg
+
+# Load proxy variables from file
+source $configuration
 
 # ask for user credentials
 if [ -z "${user}" ]; then
   stty -echo
-  printf "Enter proxy username: "
+  printf "[proxy] username: "
   read user
   stty echo
   printf "\n"
 fi
 
 stty -echo
-printf "Enter proxy password: "
+printf "[proxy] password for $user: "
 read pass
 stty echo
 printf "\n"

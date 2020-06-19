@@ -9,13 +9,14 @@ Script to enable proxy tries to configure several applications:
   - conda
   - docker (for systems with *systemctl*)
   - git
-  - resolvconf 
+  - DNS (for systems with *resolvconf*)
  
-If you do not use any of these applications in your system you can comment out this lines.
+If you do not use any of these applications in your system you can comment out this lines in *enable_proxy.sh* file.
 
 ## Installation
 
-No installation required, just place both files in a folder (I've used *~/scripts/proxy/* in the examples but you can choose the folder you want).
+No installation required, just place both files in a folder (I've used *~/aws_conda_environments_scripts/proxy* 
+in the examples considering the path of the cloned repo but you can choose the folder you prefer).
 
 For your convenience you can add a function to your *~/.bashrc* file (or *~/.zshrc*) like the following:
 
@@ -25,9 +26,9 @@ proxy() {
 
   case "$1" in
   on)
-    source ~/scripts/proxy/enable_proxy.sh ;;
+    source ~/aws_conda_environments_scripts/proxy/enable_proxy.sh ;;
   off)
-    source ~/scripts/proxy/disable_proxy.sh ;;
+    source ~/aws_conda_environments_scripts/proxy/disable_proxy.sh ;;
   *)
     printf "Usage: \"proxy on\" or \"proxy off\"\n" && return 1 ;;
   esac
@@ -36,11 +37,11 @@ proxy() {
 
 ## Configuration
 
-You have to edit at least 2 variables inside *enable_proxy.sh* script:
+There is a configuration file *default.cfg*. You have to edit at least 2 variables inside that file:
   - host (IP address of the proxy)
   - port (Port of the proxy)
 
-If the user of your system is different of the proxy user, you should add a *user* variable:
+If you want that the script don't ask for proxy user, you can set *user* variable:
 ```code
 user=<proxy_user>
 ```
@@ -49,9 +50,12 @@ You can also edit *no_proxy* variable to add the address you don't want to use p
 
 And, at last, you can edit *dns* settings if you want to add custom nameserves once you connect to the proxy.
 
+**IMPORTANT NOTE**: If your scripts path is not *~/aws_conda_environments_scripts/proxy* you should modify
+*enable_proxy.sh* to set the path of the configuration file (absolute).
+
 ## Usage instructions
 
-You can execute the scripts using *source* (with apropiate path):
+You can execute the scripts using *source* (with appropriate path):
 ```code
 source enable_proxy.sh
 ```

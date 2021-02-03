@@ -46,6 +46,9 @@ if [ ! -d $environments_dir ]; then
     # Extract the environment
     tar xzf $file --directory $environments_dir/$base
 
+    # Change permissions
+    chmod 777 $environments_dir/$base -R
+
     # Activate the environment
     source $environments_dir/$base/bin/activate
 
